@@ -1,0 +1,409 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1d1d1f;
+    background-color: #fff;
+}
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    position: relative;
+}
+
+/* underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: black;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* LANDING */
+.landing {
+    padding: 100px 20px;
+}
+
+.landing-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* text animation */
+.text {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.text h1 {
+    font-size: 3.2rem;
+}
+
+.text h2 {
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.text p {
+    color: #666;
+}
+
+/* image animation */
+.image img {
+    width: 320px;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.image img:hover {
+    transform: scale(1.03);
+}
+
+/* CONTACT */
+.contact a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #0071e3;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    opacity: 0.7;
+}
+
+/* SECTIONS */
+.section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.section h1 {
+    margin-bottom: 40px;
+}
+
+/* EXPERIENCE CARDS (KEY UPGRADE) */
+.card {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s ease;
+}
+
+/* visible state for animation */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* hover lift */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* company title */
+.card h2 {
+    margin-bottom: 5px;
+}
+
+/* role emphasis */
+.card strong {
+    display: block;
+    margin: 10px 0;
+}
+
+/* list spacing */
+.card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+/* ANIMATION KEYFRAME */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* TIMELINE */
+.timeline {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 30px;
+}
+
+/* vertical line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #ddd;
+}
+
+/* each item */
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* dot */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #0071e3;
+    border-radius: 50%;
+}
+
+/* content box */
+.timeline-content {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s ease;
+}
+
+/* animation trigger */
+.timeline-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* hover effect */
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+/* COMPANY HEADER */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* LOGOS */
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+
+    filter: grayscale(100%);
+    opacity: 0.85;
+
+    transition: all 0.3s ease;
+}
+
+/* subtle hover effect */
+.logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.logo:hover {
+    filter: grayscale(0%);
+}
+
+/* ROLE + DATE */
+.role {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.date {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* LOCATION */
+.location {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* TIMELINE CONTAINER */
+.timeline {
+    position: relative;
+    padding-left: 60px; /* space for line + dots */
+}
+
+/* VERTICAL LINE */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 25px;  /* fixed anchor */
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0071e3, #ccc);
+}
+
+/* EACH ITEM */
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+/* DOT */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 16px;  /* aligns with line center */
+    top: 28px;   /* aligns with card */
+    width: 14px;
+    height: 14px;
+    background: #0071e3;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px white;
+}
+
+/* CONTENT CARD */
+.timeline-content {
+    background: #fafafa;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    margin-left: 10px;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s ease;
+}
+
+/* SHOW ANIMATION */
+.timeline-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HOVER EFFECT */
+.timeline-content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+/* CARD BOX */
+.card-box {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+/* SKILL GRID */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* SKILL CHIP */
+.skill {
+    background: #f1f1f1;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #0071e3;
+    color: white;
+}
+
+/* CLEAN LIST */
+.clean-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.clean-list li {
+    margin-bottom: 8px;
+}
+
+/* RESUME CARD */
+.resume-card {
+    background: #f5f5f7; /* Apple-style gray */
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* BUTTON IMPROVEMENT */
+.resume-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #1d1d1f;   /* dark neutral */
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.resume-btn:hover {
+    background: #333;
+}
